@@ -9,13 +9,12 @@ function MainImage() {
 
   // This function allow the user to click on a location in image
   function clickLocation(e) {
-    console.log(e)
     const { pageX, pageY } = e;
     setTarget([...targets, { x: pageX, y: pageY }]);
   }
   return (
     <div id="img-container">
-      <img src={comiconImg} alt="" id="main-image" onClick={clickLocation}/>
+      <img src={comiconImg} alt="main-image" id="main-image" onClick={clickLocation}/>
       {targets.map((target) => <Target key={`${target.x}-${target.y}`} location={target} />)}
     </div>
   );
