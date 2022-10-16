@@ -9,8 +9,9 @@ function MainImage() {
 
   // This function allow the user to click on a location in image
   function clickLocation(e) {
-    const { clientX, clientY } = e;
-    setTarget([...targets, { x: clientX, y: clientY }]);
+    console.log(e)
+    const { pageX, pageY } = e;
+    setTarget([...targets, { x: pageX, y: pageY }]);
   }
   return (
     <div id="img-container">
