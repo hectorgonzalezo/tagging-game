@@ -14,3 +14,4 @@ The goal is to click on the required characters.
 ## Acknowledgements
 
 - Favicon by [icons8](https://icons8.com/).
+- Original image by [Mel White](https://classicexhibits.com/tradeshow-blog/author/mel/)
