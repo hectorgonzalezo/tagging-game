@@ -11,7 +11,7 @@ const Options = styled.div`
   transform: translate(-50%, 0);
   bottom: 110%;
   padding: 10px;
-  border: 2px solid var(--skobeloff);
+  border: 3px solid white;
   border-radius: 1rem;
   color: white;
   display: flex;
