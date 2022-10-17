@@ -1,6 +1,8 @@
-import React from 'react';
-import { string } from 'prop-types';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import useTimer from '../hooks/useTimer';
+import formatTime from '../utils/formatTime';
+import formaTime from '../utils/formatTime';
 
 const Display = styled.h1`
  position: sticky;
@@ -8,8 +10,19 @@ const Display = styled.h1`
 `;
 
 function Counter() {
+  const timer = useTimer();
+  // this is used to prevent the timer from starting twice
+  let timerStarted = false;
+
+  useEffect(() => {
+    if (!timerStarted) {
+      timer.start();
+      timerStarted = true;
+    }
+  }, []);
+
   return (
-    <Display>0:00:00</Display>
+    <Display>{ formatTime(timer.time)}</Display>
   );
 }
 

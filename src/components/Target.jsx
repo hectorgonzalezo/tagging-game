@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { objectOf, number} from 'prop-types';
+import { objectOf, number } from 'prop-types';
 import styled from 'styled-components';
 import CharactersContext from './CharactersContext';
 import Choices from './Choices';
@@ -13,7 +13,6 @@ const Circle = styled.div`
 `;
 
 function Target({ location }) {
-
   // turn location into a position to be sent to style
   const positionStyle = {
     top: `${location.y - 25}px`,
@@ -22,13 +21,12 @@ function Target({ location }) {
 
   return (
     <Circle style={positionStyle} className="target">
-      <CharactersContext.Provider value={[]}>
+      <CharactersContext.Provider value={["juan", "pablo"]}>
         <Choices />
       </CharactersContext.Provider>
     </Circle>
   );
 }
-
 
 Target.propTypes = {
   location: objectOf(number).isRequired,
