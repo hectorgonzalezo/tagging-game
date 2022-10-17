@@ -7,7 +7,6 @@ const StyledFooter = styled.footer`
   margin-top: auto;
   display: flex;
   align-items: center;
-  ${'' /* justify-content: center; */}
   height: 50px;
   width: 100%;
   gap: 2vw;
@@ -18,20 +17,14 @@ const StyledFooter = styled.footer`
   background-color: var(--prussian-blue);
   position: relative;
 
-  & h2,
-  & a {
+  & > div{
     position: sticky;
+    left:50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    gap: 15px;
   }
 
-  & > h2{
-    left: 10px;
-    transform: translate(50%, 0);
-  }
-
-  a {
-    left: 60%;
-    transform: translate(50%, 0);
-  }
 `;
 
 const GitHubLogo = styled.img`
@@ -41,10 +34,12 @@ const GitHubLogo = styled.img`
 function Footer({ projectName }) {
   return (
     <StyledFooter>
-      <h2>Héctor González Orozco</h2>
-      <a href={`https://github.com/hectorgonzalezo/${projectName}`}>
-        <GitHubLogo alt="github logo" id="github-logo" src={githubLogo} />
-      </a>
+      <div>
+        <h2>Héctor González Orozco</h2>
+        <a href={`https://github.com/hectorgonzalezo/${projectName}`}>
+          <GitHubLogo alt="github logo" id="github-logo" src={githubLogo} />
+        </a>
+      </div>
     </StyledFooter>
   );
 }

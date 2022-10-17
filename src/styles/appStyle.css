@@ -1,5 +1,12 @@
 
 @import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Expanded&display=swap');
+@font-face {
+  font-family: 'Stint Ultra Expanded';
+  src: url('../assets/stintultraexpanded-regular-webfont.woff') format('woff');
+  font-family: 'Stint Ultra Expanded2';
+  src: url('../assets/stintultraexpanded-regular-webfont.woff2') format('woff2');
+}
 :root{
   /* CSS HEX */
 --skobeloff: #006466ff;
@@ -25,12 +32,14 @@
 --gradient-radial: radial-gradient(#006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
 
 --img-width: 2000px;
+--img-padding: 10px;
+font-family: 'Stint Ultra Expanded', cursive;
 }
 
 .App{
-  background-color: var(--space-cadet);
+  background-color: var(--skobeloff);
   min-height: 100vh;
-  width: max(100vw, var(--img-width));
+  width: calc(var(--img-width) + calc(var(--img-padding) * 2));
   display: grid;
   grid-template-rows: 70px 1fr 50px;
   gap: 0px;
