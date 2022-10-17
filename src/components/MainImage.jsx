@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import comiconImg from '../assests/comicon.jpg';
+import comiconImg from '../assets/comicon.jpg';
 import Target from './Target';
 import '../styles/mainImageStyle.css';
 

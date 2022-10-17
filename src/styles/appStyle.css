@@ -23,11 +23,18 @@
 --gradient-top-left: linear-gradient(225deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
 --gradient-bottom-left: linear-gradient(315deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
 --gradient-radial: radial-gradient(#006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+
+--img-width: 2000px;
 }
 
 .App{
   background-color: var(--space-cadet);
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: max(100vw, var(--img-width));
+  display: grid;
+  grid-template-rows: 70px 1fr 50px;
+  gap: 0px;
+  align-items: center;
+  position: relative;
 }
 

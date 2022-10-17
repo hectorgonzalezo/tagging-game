@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
 import { objectOf, number } from 'prop-types';
+import styled from 'styled-components';
+import Choices from './Choices';
+
+const Circle = styled.div`
+  position: absolute;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  outline: 5px dashed red;
+`;
 
 function Target({ location }) {
   // turn location into a position to be sent to style
@@ -9,8 +19,9 @@ function Target({ location }) {
   };
 
   return (
-    <div className="target" style={positionStyle}>
-    </div>
+    <Circle style={positionStyle}>
+      <Choices />
+    </Circle>
   );
 }
 
