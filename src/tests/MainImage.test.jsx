@@ -21,11 +21,12 @@ describe('Database queries', () => {
     const image = screen.getByRole('img');
 
     userEvent.click(image);
-    userEvent.click(image, { screenX: 10, screenY: 20 });
-    userEvent.click(image, { screenX: 50, screenY: 600 });
+    userEvent.click(image, { pageX: 10, pageY: 20 });
+    userEvent.click(image, { pageX: 50, pageY: 600 });
 
     const target = screen.getAllByRole('generic');
     // There should be 5 divs after three clicks
-    expect(target.length).toBe(5);
+    expect(target.length).toBe(8);
+    expect(image).toMatchSnapshot();
   });
 });

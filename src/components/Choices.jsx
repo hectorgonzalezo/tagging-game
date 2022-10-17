@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
-import CharacterChoice from './CharacterOption';
+import uniqid from 'uniqid';
+import CharactersContext from './CharactersContext';
+import CharacterOption from './CharacterOption';
 
 const Options = styled.div`
   position: absolute;
@@ -27,16 +29,16 @@ const Options = styled.div`
     transform: translate(-50%, 0) scale(1);
     opacity: 1;
   }
-
 `;
 
+// Make an option for each character
 function Choices() {
+  const characters = useContext(CharactersContext);
   return (
     <Options>
-      <CharacterChoice name='boo' />
-      <CharacterChoice name='juan' />
-      <CharacterChoice name='juan' />
-      <CharacterChoice name='juaasdfdn' />
+      {characters.map((character) => (
+        <CharacterOption key={character + uniqid()} name={character} />
+      ))}
     </Options>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import comiconImg from '../assets/comicon.jpg';
+import uniqid from 'uniqid';
 import Target from './Target';
 import '../styles/mainImageStyle.css';
 
@@ -14,8 +15,8 @@ function MainImage() {
   }
   return (
     <div id="img-container">
-      <img src={comiconImg} alt="main-image" id="main-image" onClick={clickLocation}/>
-      {targets.map((target) => <Target key={`${target.x}-${target.y}`} location={target} />)}
+      <img src={comiconImg} alt="main" id="main-image" onClick={clickLocation}/>
+      {targets.map((target) => <Target key={`${target.x + uniqid()}-${target.y + uniqid()}`} location={target} />)}
     </div>
   );
 }

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Database queries Adds multiple targets 1`] = `
+<img
+  alt="main"
+  id="main-image"
+  src="comicon.jpg"
+/>
+`;
