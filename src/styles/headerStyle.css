@@ -51,13 +51,16 @@ header > div{
   cursor: pointer;
 }
 
+#char-dropdown ul{
+  width: auto; 
+}
 #char-dropdown li ul {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   transition: all 0.5s ease;
- top: 110%;
-  left: 0;
+ top: 120%;
+  right: 0;
   display: none;
   background-color: var(--prussian-blue)
 }
@@ -66,14 +69,20 @@ header > div{
 #char-dropdown li ul:hover {
   visibility: visible;
   opacity: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 7px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  /* justify-items: start; */
+  gap: 10px;
 }
 
 #char-dropdown ul li{
   background-color: var(--palatinate-purple);
   outline: 1px solid white;
   font-size: clamp(0.8rem, 3vw, 1.5rem);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 2px 2px 5px black;
 }

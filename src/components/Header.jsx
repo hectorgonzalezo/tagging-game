@@ -1,6 +1,6 @@
 import React from 'react';
 import Counter from './Counter';
-import CharatersDisplay from './CharactersDisplay';
+import CharactersDisplay from './CharactersDisplay';
 import '../styles/headerStyle.css';
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
       <div>
         <h1 id="title">Hidden picture game</h1>
         <Counter />
-        <CharatersDisplay />
+        <CharactersDisplay />
       </div>
     </header>
   );

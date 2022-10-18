@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, container } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Header from '../components/Header';
+import CharactersContext from '../components/CharactersContext';
 
 describe('Header functionality', () => {
   test('Header timer ticking', async () => {
@@ -14,5 +15,16 @@ describe('Header functionality', () => {
     await setTimeout(() => {
       expect(counter).toHaveDisplayValue('0:00:02');
     }, 2000);
+  });
+
+  test('Characters should be created and pictures added', () => {
+    render(
+      <CharactersContext.Provider value={['Boo']}>
+        <Header />
+      </CharactersContext.Provider>
+    );
+
+    const charactersDisplay = screen.queryAllByRole('listitem');
+    expect(charactersDisplay[1].id).toBe('Boo-option');
   });
 });
