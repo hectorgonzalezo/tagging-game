@@ -6,7 +6,6 @@ function useCharacterChoice() {
 
   // Checks with database if choice results in a hit
   async function checkChoice(location, character) {
-    console.log(location)
     // Look if the coordinates exists in database
     const result = await database.lookForResult(location, character);
     setHit(result);

@@ -10,6 +10,10 @@ const Circle = styled.div`
   height: 50px;
   outline: 3px dashed white;
   background-color:  rgba(171, 169, 169, 0.5);
+
+  &.hidden{
+    display: none;
+  }
 `;
 
 function Target({ location, closeTarget, className, onClick }) {
@@ -19,16 +23,15 @@ function Target({ location, closeTarget, className, onClick }) {
     left: `${location.x - 25}px`,
   };
 
-
   return (
     <Circle
       style={positionStyle}
-      className={className === 'bullseye' ? "bullseye" : 'target'}
+      className={className}
       onClick={onClick}
       data-testid={className === 'bullseye' ? "bullseye" : 'target'}
     >
       {/* only add choices after clicking */}
-      {className !== 'bullseye' ? <Choices closeTarget={closeTarget} location={location} /> : null}
+      {className === 'target' ? <Choices closeTarget={closeTarget} location={location} /> : null}
     </Circle>
   );
 }

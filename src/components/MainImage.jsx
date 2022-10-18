@@ -9,6 +9,7 @@ function MainImage() {
   const [target, setTarget] = useState([]);
   const [bullseye, setBullseye] = useState({});
   const [bullseyeActive, setBullseyeActive] = useState(true);
+  const [bullseyeVisible, setBullseyeVisible] = useState(true);
 
 
   // This function allow the user to click on a location in image
@@ -16,6 +17,7 @@ function MainImage() {
     const { pageX, pageY } = e;
     setTarget([{ x: pageX, y: pageY }]);
     setBullseyeActive(false);
+    setBullseyeVisible(false);
   }
 
   function locateBullseye(e) {
@@ -28,6 +30,7 @@ function MainImage() {
   function closeTarget() {
     setTarget([]);
     setBullseyeActive(true);
+    setBullseyeVisible(true);
   }
 
   return (
@@ -44,9 +47,10 @@ function MainImage() {
           key={`${target.x + uniqid()}-${target.y + uniqid()}`}
           location={target}
           closeTarget={closeTarget}
+          className="target"
         />
       ))}
-      <Target location={bullseye} className="bullseye" onClick={clickLocation} />
+      <Target location={bullseye} className={bullseyeVisible ? "bullseye" : "hidden"} onClick={clickLocation} />
     </div>
   );
 }
