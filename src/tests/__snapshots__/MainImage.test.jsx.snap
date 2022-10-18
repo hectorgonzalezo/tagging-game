@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Database queries Adds multiple targets 1`] = `
+exports[`Main image for the game Clicking on close button on target will close it 1`] = `
+<img
+  alt="main"
+  id="main-image"
+  src="comicon.jpg"
+/>
+`;
+
+exports[`Main image for the game Only a single target after multiple clicks 1`] = `
 <img
   alt="main"
   id="main-image"

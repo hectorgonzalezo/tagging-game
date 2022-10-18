@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import uniqid from 'uniqid';
+import { func } from 'prop-types';
 import CharactersContext from './CharactersContext';
 import CharacterOption from './CharacterOption';
 
@@ -14,11 +15,23 @@ const Options = styled.div`
   border: 3px solid white;
   border-radius: 1rem;
   color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 7px;
 
   animation: grow 1s;
+
+  & > button:first-child{
+    background-color: red;
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 5px;
+
+    :hover{
+      background-color: var(--palatinate-purple);
+    }
+  }
 
   @keyframes grow {
   from {
@@ -32,15 +45,20 @@ const Options = styled.div`
 `;
 
 // Make an option for each character
-function Choices() {
+function Choices({ closeTarget }) {
   const characters = useContext(CharactersContext);
   return (
     <Options>
+      <CharacterOption name="x" onClick={closeTarget} />
       {characters.map((character) => (
-        <CharacterOption key={character + uniqid()} name={character} />
+        <CharacterOption key={character + uniqid()} name={character} onClick={()=>{}}/>
       ))}
     </Options>
   );
 }
+
+Choices.propTypes = {
+  closeTarget: func.isRequired,
+};
 
 export default Choices;

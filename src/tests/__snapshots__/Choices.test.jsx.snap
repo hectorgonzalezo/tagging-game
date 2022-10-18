@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Choices between characters Choices should be empty if context stays as initialized 1`] = `undefined`;
