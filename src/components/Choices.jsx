@@ -7,8 +7,10 @@ import '../styles/choicesStyle.css';
 // Make an option for each character
 function Choices({ closeTarget, location }) {
   const characters = useContext(CharactersContext);
+  console.log(location.y)
   return (
-    <div className="choices">
+    // className will prevent the choices from rendering above the screen view
+    <div className={`choices ${location.y <= 500 ? 'below' : ''}`}>
       {/* add close button */}
       <CharacterOption name="x" closeTarget={closeTarget} />
       {/* add a button for every character */}

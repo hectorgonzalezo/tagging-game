@@ -18,6 +18,10 @@
   animation: grow 1s;
 }
 
+.choices.below{
+  bottom: -550%;
+}
+
 .choices > button:first-child {
   background-color: rgb(163, 29, 29);
   grid-column: 1 / -1;
