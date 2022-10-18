@@ -1,0 +1,79 @@
+header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  position: sticky;
+  top: 0px;
+  background-color: var(--prussian-blue);
+  height: 70px;
+  gap: 10px;
+}
+
+header > div{
+  position: sticky;
+  left: 0%;
+  padding: 0px 5px 0px 5px;
+  display: grid;
+  grid-template-columns: 2.3fr 1fr 1fr 0.1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100vw;
+} 
+
+
+#title{
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  justify-self: start;
+}
+
+
+#char-dropdown{
+ display: block;
+ transition-duration: 0.5s;
+ position: relative;
+ outline: 3px solid white;
+ border-radius: 1rem;
+ width: auto;
+}
+
+#char-dropdown,
+#char-dropdown ul,
+#char-dropdown ul li{
+  background-color: var(--palatinate-purple); 
+  padding: 10px;
+ font-size: clamp(1rem, 3vw, 1.8rem);
+ outline: 3px solid white;
+ border-radius: 1rem;
+}
+
+#char-dropdown:hover {
+  cursor: pointer;
+}
+
+#char-dropdown li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+ top: 110%;
+  left: 0;
+  display: none;
+  background-color: var(--prussian-blue)
+}
+
+#char-dropdown li:hover > ul,
+#char-dropdown li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+#char-dropdown ul li{
+  background-color: var(--palatinate-purple);
+  outline: 1px solid white;
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+}

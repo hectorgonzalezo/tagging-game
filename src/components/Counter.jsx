@@ -4,12 +4,12 @@ import useTimer from '../hooks/useTimer';
 import formatTime from '../utils/formatTime';
 
 const Display = styled.h1`
-  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-size: clamp(1.1rem, 3vw, 2rem);
   text-align: start;
   background-color: var(--dark-purple-2);
   padding: 10px;
   outline: 3px solid white;
-  width: clamp(95px, 14vw,  150px);
+  width: clamp(75px, 14vw,  150px);
   border-radius: 1rem;
 `;
 

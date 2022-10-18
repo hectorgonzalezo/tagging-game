@@ -4,11 +4,13 @@ import styled from 'styled-components';
 
 const Option = styled.button`
   outline: 1px solid white;
-  padding: 3px;
+  padding: 5px;
   background-color: var(--space-cadet);
   font-size: 1.1rem;
   color:  white;
   border: none;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 4px black;
 
   &:hover{
     background-color: var(--palatinate-purple);
