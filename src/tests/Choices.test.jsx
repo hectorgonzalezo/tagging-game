@@ -9,7 +9,7 @@ describe('Choices between characters', () => {
   test('Choices should be empty if context stays as initialized', async () => {
     const mockClose = jest.fn();
 
-    render(<Choices closeTarget={mockClose} />);
+    render(<Choices closeTarget={mockClose} location={{ x: 10, y: 20 }} />);
 
     const closeButton = screen.getByRole('button', { name: 'x' });
     // there should be no option rendered, only the close button
@@ -23,7 +23,7 @@ describe('Choices between characters', () => {
     render((
       <div>
         <CharactersContext.Provider value={['juan']}>
-          <Choices closeTarget={mockClose}/>
+          <Choices closeTarget={mockClose} location={{ x: 10, y: 20 }}/>
         </CharactersContext.Provider>
       </div>
     ));
@@ -37,7 +37,7 @@ describe('Choices between characters', () => {
     render((
       <div>
         <CharactersContext.Provider value={['juan']}>
-          <Choices closeTarget={mockClose}/>
+          <Choices closeTarget={mockClose} location={{ x: 10, y: 20 }} />
         </CharactersContext.Provider>
       </div>
     ));

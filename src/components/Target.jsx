@@ -1,5 +1,5 @@
 import React from 'react';
-import { objectOf, number, func, string } from 'prop-types';
+import { objectOf, number, func, string } from "prop-types";
 import styled from 'styled-components';
 import Choices from './Choices';
 
@@ -19,10 +19,16 @@ function Target({ location, closeTarget, className, onClick }) {
     left: `${location.x - 25}px`,
   };
 
+
   return (
-    <Circle style={positionStyle} className={`target ${className}`} onClick={onClick} data-testid="target">
+    <Circle
+      style={positionStyle}
+      className={className === 'bullseye' ? "bullseye" : 'target'}
+      onClick={onClick}
+      data-testid={className === 'bullseye' ? "bullseye" : 'target'}
+    >
       {/* only add choices after clicking */}
-      {className !== 'bullseye' ? <Choices closeTarget={closeTarget} /> : null}
+      {className !== 'bullseye' ? <Choices closeTarget={closeTarget} location={location} /> : null}
     </Circle>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
-import { string, func } from 'prop-types';
+import { string, number, objectOf, func} from 'prop-types';
 import styled from 'styled-components';
+import useCharacterChoice from '../hooks/useCharacterChoice';
 
 const Option = styled.button`
   outline: 1px solid white;
@@ -19,19 +20,24 @@ const Option = styled.button`
 
 `;
 
-function CharacterOption({ name, onClick }) {
+function CharacterOption({ name, location, closeTarget }) {
+  const { hit, checkChoice } = useCharacterChoice();
+
   return (
-    <Option onClick={onClick}>{name}</Option>
+    // only check choice if it's not the close button
+    <Option onClick={name !== 'x' ? () => checkChoice(location, name) : closeTarget}>{name}</Option>
   );
 }
 
 CharacterOption.defaultProps = {
   name: '',
+  location: {},
 };
 
 CharacterOption.propTypes = {
   name: string,
-  onClick: func.isRequired,
+  location: objectOf(number),
+  closeTarget: func,
 };
 
 export default CharacterOption;
