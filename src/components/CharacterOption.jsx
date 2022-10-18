@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { string, number, objectOf, func} from 'prop-types';
 import styled from 'styled-components';
 import useCharacterChoice from '../hooks/useCharacterChoice';
+import TargetsContext from './TargetsContext';
 
 const Option = styled.button`
   outline: 1px solid white;
@@ -23,6 +24,14 @@ const Option = styled.button`
 function CharacterOption({ name, location, closeTarget }) {
   const { hit, checkChoice } = useCharacterChoice();
 
+  // Updates the targets and message in the main image when correctly guessing a target
+  const updateMainImage = useContext(TargetsContext);
+
+  useEffect(() => {
+    if (hit) {
+      updateMainImage(location, name);
+    }
+  },[hit])
   return (
     // only check choice if it's not the close button
     <Option onClick={name !== 'x' ? () => checkChoice(location, name) : closeTarget}>{name}</Option>

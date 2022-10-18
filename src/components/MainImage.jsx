@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
 import comiconImg from '../assets/comicon.jpg';
 import Target from './Target';
+import TargetsContext from './TargetsContext';
 import '../styles/mainImageStyle.css';
 
 function MainImage() {
   // Target currently selected by user
   const [target, setTarget] = useState([]);
+  // This will keep track of every correctGuess
+  const [hits, setHits] = useState([]);
   const [bullseye, setBullseye] = useState({});
   const [bullseyeActive, setBullseyeActive] = useState(true);
   const [bullseyeVisible, setBullseyeVisible] = useState(true);
@@ -33,7 +36,12 @@ function MainImage() {
     setBullseyeVisible(true);
   }
 
+  function checkTarget(location, name) {
+    setHits((prevHits) => [...prevHits, { location, name }]);
+  }
+
   return (
+    <TargetsContext.Provider value={checkTarget}>
     <div id="img-container">
       <img
         src={comiconImg}
@@ -51,7 +59,11 @@ function MainImage() {
         />
       ))}
       <Target location={bullseye} className={bullseyeVisible ? "bullseye" : "hidden"} onClick={clickLocation} />
+      {hits.map((hit) => (
+        <h1 key={hit}>hit</h1>
+      ))}
     </div>
+    </TargetsContext.Provider>
   );
 }
 

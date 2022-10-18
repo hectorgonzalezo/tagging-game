@@ -7,7 +7,6 @@ import '../styles/choicesStyle.css';
 // Make an option for each character
 function Choices({ closeTarget, location }) {
   const characters = useContext(CharactersContext);
-  console.log(location.y)
   return (
     // className will prevent the choices from rendering above the screen view
     <div className={`choices ${location.y <= 500 ? 'below' : ''}`}>
