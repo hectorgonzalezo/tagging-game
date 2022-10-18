@@ -28,7 +28,7 @@ function Target({ location, closeTarget, className, onClick }) {
       style={positionStyle}
       className={className}
       onClick={onClick}
-      data-testid={className === 'bullseye' ? "bullseye" : 'target'}
+      data-testid={className === 'target' ? 'target' : 'bullseye'}
     >
       {/* only add choices after clicking */}
       {className === 'target' ? <Choices closeTarget={closeTarget} location={location} /> : null}

@@ -31,7 +31,8 @@ function CharacterOption({ name, location, closeTarget }) {
     if (hit) {
       updateMainImage(location, name);
     }
-  },[hit])
+  }, [hit]);
+
   return (
     // only check choice if it's not the close button
     <Option onClick={name !== 'x' ? () => checkChoice(location, name) : closeTarget}>{name}</Option>

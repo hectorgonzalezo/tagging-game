@@ -10,6 +10,7 @@ describe('Main image for the game', () => {
     const image = screen.getByRole('img');
 
     userEvent.click(image);
+    screen.debug();
 
     // After click there should be a target
     const target = screen.getByTestId('target');
