@@ -9,7 +9,7 @@ The goal is to click on the required characters.
 
 ## Live Preview
 
-[https://wheres-waldo-6619d.web.app/(https://wheres-waldo-6619d.web.app/
+[https://wheres-waldo-6619d.web.app/](https://wheres-waldo-6619d.web.app/)
 
 ## Acknowledgements
 
