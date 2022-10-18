@@ -22,7 +22,11 @@ const StyledFooter = styled.footer`
     left:50%;
     transform: translate(-50%, 0);
     display: flex;
-    gap: 15px;
+    gap: 25px;
+  }
+
+  & a{
+    color: white;
   }
 
 `;
@@ -39,6 +43,12 @@ function Footer({ projectName }) {
         <a href={`https://github.com/hectorgonzalezo/${projectName}`}>
           <GitHubLogo alt="github logo" id="github-logo" src={githubLogo} />
         </a>
+        <h2>
+          Image by{" "}
+          <a href="https://classicexhibits.com/tradeshow-blog/author/mel/">
+            Mel White
+          </a>
+        </h2>
       </div>
     </StyledFooter>
   );
