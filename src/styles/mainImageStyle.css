@@ -3,11 +3,19 @@
   position: relative;
   width: auto;
 }
+
 #main-image{
   width: var(--img-width);
   border: var(--img-padding) solid var(--skobeloff);
   border-radius: 2%;
 }
 
+.bullseye {
+  position: absolute;
+  left: -100%;
+  pointer-events: none;
+}
 
-
+#main-image:hover + .bullseye{
+  display: block;
+}

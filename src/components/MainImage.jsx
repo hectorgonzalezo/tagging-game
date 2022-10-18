@@ -7,16 +7,27 @@ import '../styles/mainImageStyle.css';
 function MainImage() {
   // Target currently selected by user
   const [target, setTarget] = useState([]);
+  const [bullseye, setBullseye] = useState({});
+  const [bullseyeActive, setBullseyeActive] = useState(true);
+
 
   // This function allow the user to click on a location in image
   function clickLocation(e) {
     const { pageX, pageY } = e;
     setTarget([{ x: pageX, y: pageY }]);
+    setBullseyeActive(false);
   }
 
+  function locateBullseye(e) {
+    const { pageX, pageY } = e;
+    if (bullseyeActive) {
+      setBullseye({ x: pageX, y: pageY });
+    }
+  }
   // Deletes target from view
   function closeTarget() {
     setTarget([]);
+    setBullseyeActive(true);
   }
 
   return (
@@ -26,6 +37,7 @@ function MainImage() {
         alt="main"
         id="main-image"
         onClick={clickLocation}
+        onMouseMove={locateBullseye}
       />
       {target.map((target) => (
         <Target
@@ -34,6 +46,7 @@ function MainImage() {
           closeTarget={closeTarget}
         />
       ))}
+      <Target location={bullseye} className="bullseye" onClick={clickLocation} />
     </div>
   );
 }

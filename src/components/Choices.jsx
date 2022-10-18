@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import uniqid from 'uniqid';
 import { func } from 'prop-types';
 import CharactersContext from './CharactersContext';
@@ -7,6 +7,7 @@ import '../styles/choicesStyle.css';
 // Make an option for each character
 function Choices({ closeTarget }) {
   const characters = useContext(CharactersContext);
+
   return (
     <div className="choices">
       {/* add close button */}
@@ -14,7 +15,7 @@ function Choices({ closeTarget }) {
       {/* add a button for every character */}
       {characters.map((character) => (
         <CharacterOption
-          key={character + uniqid()}
+          key={character}
           name={character}
           onClick={() => {}}
         />
