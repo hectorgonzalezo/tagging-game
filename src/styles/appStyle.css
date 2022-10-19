@@ -1,42 +1,43 @@
-
 @import './reset.css';
 @import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Expanded&display=swap');
+
 @font-face {
   font-family: 'Stint Ultra Expanded';
   src: url('../assets/stintultraexpanded-regular-webfont.woff') format('woff');
   font-family: 'Stint Ultra Expanded2';
   src: url('../assets/stintultraexpanded-regular-webfont.woff2') format('woff2');
 }
-:root{
+
+:root {
   /* CSS HEX */
---skobeloff: #006466ff;
---midnight-green-eagle-green: #065a60ff;
---midnight-green-eagle-green-2: #0b525bff;
---midnight-green-eagle-green-3: #144552ff;
---charcoal: #1b3a4bff;
---prussian-blue: #212f45ff;
---space-cadet: #272640ff;
---dark-purple: #312244ff;
---dark-purple-2: #3e1f47ff;
---palatinate-purple: #4d194dff;
+  --skobeloff: #006466ff;
+  --midnight-green-eagle-green: #065a60ff;
+  --midnight-green-eagle-green-2: #0b525bff;
+  --midnight-green-eagle-green-3: #144552ff;
+  --charcoal: #1b3a4bff;
+  --prussian-blue: #212f45ff;
+  --space-cadet: #272640ff;
+  --dark-purple: #312244ff;
+  --dark-purple-2: #3e1f47ff;
+  --palatinate-purple: #4d194dff;
 
 
---gradient-top: linear-gradient(0deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-right: linear-gradient(90deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-bottom: linear-gradient(180deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-left: linear-gradient(270deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-top-right: linear-gradient(45deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-bottom-right: linear-gradient(135deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-top-left: linear-gradient(225deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-bottom-left: linear-gradient(315deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
---gradient-radial: radial-gradient(#006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-top: linear-gradient(0deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-right: linear-gradient(90deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-bottom: linear-gradient(180deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-left: linear-gradient(270deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-top-right: linear-gradient(45deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-bottom-right: linear-gradient(135deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-top-left: linear-gradient(225deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-bottom-left: linear-gradient(315deg, #006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+  --gradient-radial: radial-gradient(#006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
 
---img-width: 2000px;
---img-padding: 10px;
-font-family: 'Stint Ultra Expanded', cursive;
+  --img-width: 2000px;
+  --img-padding: 10px;
+  font-family: 'Stint Ultra Expanded', cursive;
 }
 
-.App{
+.App {
   background-color: var(--skobeloff);
   min-height: 100vh;
   width: calc(var(--img-width) + calc(var(--img-padding) * 2));
@@ -47,3 +48,38 @@ font-family: 'Stint Ultra Expanded', cursive;
   position: relative;
 }
 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+  @keyframes shakeUp {
+    10%, 90% {
+      transform: translate3d(0, -1px, 0);
+    }
+
+    20%, 80% {
+      transform: translate3d(0, 2px, 0);
+    }
+
+    30%, 50%, 70% {
+      transform: translate3d(0, -4px, 0);
+    }
+
+    40%, 60% {
+      transform: translate3d(0, 4px, 0);
+    }
+  }

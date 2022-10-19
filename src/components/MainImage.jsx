@@ -37,7 +37,7 @@ function MainImage({ guessFunc }) {
     setBullseyeVisible(true);
   }
 
-  function checkTarget(location, name) {
+  function checkTarget (location, name) {
     setHits((prevHits) => [...prevHits, { location, name }]);
   }
 
@@ -46,7 +46,6 @@ function MainImage({ guessFunc }) {
     closeTarget();
     // add guess:true to last hit in array
     if (hits.length > 0) {
-      console.log('change')
       guessFunc(hits[hits.length - 1].name);
     }
   }, [hits]);

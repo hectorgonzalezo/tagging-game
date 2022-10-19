@@ -12,8 +12,8 @@ const Circle = styled.div`
   background-color:  rgba(171, 169, 169, 0.5);
 
   &.correct{
-    outline: 3px dashed red;
-    background-color:  rgba(169, 10, 10, 0.3); 
+    outline: 3px dashed white; 
+    background-color: rgba(15, 15, 255,  0.5); 
   }
 
   &.hidden{

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import database from '../firebase';
 
 function useCharacterChoice() {
-  const [hit, setHit] = useState(false);
+  const [hit, setHit] = useState('');
 
   // Checks with database if choice results in a hit
   async function checkChoice(location, character) {
