@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import MainImage from '../components/MainImage';
+import CharactersContext from '../components/CharactersContext';
 
 describe('Main image for the game', () => {
   test('Pressing anywhere adds a target', async () => {
@@ -10,7 +11,6 @@ describe('Main image for the game', () => {
     const image = screen.getByRole('img');
 
     userEvent.click(image);
-    screen.debug();
 
     // After click there should be a target
     const target = screen.getByTestId('target');
@@ -46,5 +46,51 @@ describe('Main image for the game', () => {
     const target = screen.queryByTestId('target');
     expect(target).not.toBeInTheDocument();
     expect(image).toMatchSnapshot();
+  });
+
+  test('Clicking on a correct target, adds a CorrectGuess', async () => {
+    render(
+      <CharactersContext.Provider value={['General Snoo']} >
+        <MainImage />
+      </CharactersContext.Provider>
+    );
+    const image = screen.getByRole('img');
+
+    // Add a target
+    userEvent.click(image, { pageX: 1293, pageY: 1340 });
+
+    // Press close target button
+    const generalSnooButton = screen.getByRole('button', { name: 'General Snoo' });
+    userEvent.click(generalSnooButton);
+
+    // Find CorrectGuess after database lookup
+    setTimeout(() => {
+      const correctGuess = screen.queryByTestId('correctGuess');
+      expect(correctGuess).toBeInTheDocument();
+      expect(image).toMatchSnapshot();
+    }, 0);
+  });
+
+  test('Clicking on a wrong target, doesnt adds a CorrectGuess', async () => {
+    render(
+      <CharactersContext.Provider value={['General Snoo']} >
+        <MainImage />
+      </CharactersContext.Provider>
+    );
+    const image = screen.getByRole('img');
+
+    // Add a target
+    userEvent.click(image, { pageX: 100, pageY: 100 });
+
+    // Press close target button
+    const generalSnooButton = screen.getByRole('button', { name: 'General Snoo' });
+    userEvent.click(generalSnooButton);
+
+    // Doesnt CorrectGuess after database lookup
+    setTimeout(() => {
+      const correctGuess = screen.queryByTestId('correctGuess');
+      expect(correctGuess).not.toBeInTheDocument();
+      expect(image).toMatchSnapshot();
+    }, 0);
   });
 });

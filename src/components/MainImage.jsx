@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
 import comiconImg from '../assets/comicon.jpg';
 import Target from './Target';
+import CorrectGuess from './CorrectGuess';
 import TargetsContext from './TargetsContext';
 import '../styles/mainImageStyle.css';
 
@@ -60,7 +61,7 @@ function MainImage() {
       ))}
       <Target location={bullseye} className={bullseyeVisible ? "bullseye" : "hidden"} onClick={clickLocation} />
       {hits.map((hit) => (
-        <h1 key={hit}>hit</h1>
+        <CorrectGuess key={hit.name} location={hit.location} name={hit.name} />
       ))}
     </div>
     </TargetsContext.Provider>
