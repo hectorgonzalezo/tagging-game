@@ -13,12 +13,12 @@ const CharItem = styled.li`
   outline: 1px solid white;
   font-size: clamp(0.8rem, 3vw, 1.5rem);
   display: flex;
-  gap: 0px;
+  gap: 5px;
   align-items: center;
   justify-content: space-around;
   box-shadow: 2px 2px 5px black;
   opacity: ${(props) => props.opacity};
-  p
+  text-align: end;
 `;
 
 function CharactersDisplay() {

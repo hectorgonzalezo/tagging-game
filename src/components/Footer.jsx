@@ -12,6 +12,7 @@ const StyledFooter = styled.footer`
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.5rem;
   background-color: var(--prussian-blue);
+  position: relative;
 
   & > div{
     position: sticky;

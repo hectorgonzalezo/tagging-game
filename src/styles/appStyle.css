@@ -48,6 +48,43 @@
   position: relative;
 }
 
+.App header,
+.App #img-container ,
+.App footer{
+  opacity: 1;
+}
+
+
+.App.opaque header,
+.App.opaque #img-container ,
+.App.opaque footer{
+  transition: all 1s;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+button {
+  outline: 1px solid white;
+  padding: 6px;
+  background-color: var(--space-cadet);
+  font-size: 1.1rem;
+  color:  white;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 7px black;
+  position: relative;
+}
+
+button:active{
+  top: 1px;
+  right: -2px;
+}
+
+button:hover{
+  background-color: var(--palatinate-purple);
+  cursor: pointer;
+}
+
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);

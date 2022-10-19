@@ -5,24 +5,9 @@ import useCharacterChoice from '../hooks/useCharacterChoice';
 import TargetsContext from './TargetsContext';
 
 const Option = styled.button`
-position: relative;
-  outline: 1px solid white;
-  padding: 5px;
-  background-color: var(--space-cadet);
-  font-size: 1.1rem;
-  color:  white;
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 2px 2px 4px black;
-
   &.inactive{
     opacity: 0.5;
     pointer-events: none;
-  }
-
-  &:active{
-    top: 1px;
-    right: 2px;
   }
 
   &.wrong{
@@ -35,12 +20,6 @@ position: relative;
     }
     text-decoration: line-through;
   }
-
-  &:hover{
-    background-color: var(--palatinate-purple);
-    cursor: pointer;
-  }
-
 
 `;
 

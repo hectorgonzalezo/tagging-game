@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 
 function useTimer() {
   const [time, setTime] = useState(0);
+  let loop;
 
   function start() {
     setTime(0);
-    setInterval(() => setTime((prevTime) => prevTime + 1), 1000);
+    loop = setInterval(() => setTime((prevTime) => prevTime + 1), 1000);
   }
 
-  return { time, start };
+  function stop() {
+    clearInterval(loop);
+  }
+
+  return { time, start, stop };
 }
 
 export default useTimer;
