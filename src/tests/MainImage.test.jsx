@@ -6,13 +6,13 @@ import MainImage from '../components/MainImage';
 import CharactersContext from '../components/CharactersContext';
 
 describe('Main image for the game', () => {
+  const mockGuessFunc = jest.fn()
   test('Pressing anywhere adds a target', async () => {
-    render(<MainImage />);
+    render(<MainImage guessFunc={mockGuessFunc}/>);
     const image = screen.getByRole('img');
 
     userEvent.click(image);
 
-    screen.debug()
     // After click there should be a target
     const target = screen.getByTestId('target');
 
@@ -20,7 +20,7 @@ describe('Main image for the game', () => {
   });
 
   test('Only a single target after multiple clicks', async () => {
-    render(<MainImage />);
+    render(<MainImage guessFunc={mockGuessFunc}/>);
     const image = screen.getByRole('img');
 
     userEvent.click(image);
@@ -34,7 +34,7 @@ describe('Main image for the game', () => {
   });
 
   test('Clicking on close button on target will close it', async () => {
-    render(<MainImage />);
+    render(<MainImage guessFunc={mockGuessFunc}/>);
     const image = screen.getByRole('img');
 
     // Add a target
@@ -51,8 +51,8 @@ describe('Main image for the game', () => {
 
   test('Clicking on a correct target, adds a CorrectGuess', async () => {
     render(
-      <CharactersContext.Provider value={['General Snoo']} >
-        <MainImage />
+      <CharactersContext.Provider value={[{name: 'General Snoo', guessed: false }]} >
+        <MainImage guessFunc={mockGuessFunc}/>
       </CharactersContext.Provider>
     );
     const image = screen.getByRole('img');
@@ -72,10 +72,31 @@ describe('Main image for the game', () => {
     }, 0);
   });
 
-  test('Clicking on a wrong target, doesnt adds a CorrectGuess', async () => {
+  test('Clicking on a correct target calls guessFunc function', async () => {
+    const mockFunc = jest.fn();
     render(
-      <CharactersContext.Provider value={['General Snoo']} >
-        <MainImage />
+      <CharactersContext.Provider value={[{name: 'General Snoo', guessed: false }]} >
+        <MainImage guessFunc={mockFunc} />
+      </CharactersContext.Provider>
+    );
+    const image = screen.getByRole('img');
+
+    // Add a target
+    userEvent.click(image, { pageX: 1293, pageY: 1340 });
+
+    // Press close target button
+    const generalSnooButton = screen.getByRole('button', { name: 'General Snoo' });
+    userEvent.click(generalSnooButton);
+
+    setTimeout(() => {
+      expect(mockFunc).toBeCalled();
+    }, 0);
+  });
+
+  test('Clicking on a wrong target doesnt adds a CorrectGuess', async () => {
+    render(
+      <CharactersContext.Provider value={[{name: 'General Snoo', guessed: false }]} >
+        <MainImage guessFunc={mockGuessFunc}/>
       </CharactersContext.Provider>
     );
     const image = screen.getByRole('img');

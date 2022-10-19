@@ -22,7 +22,7 @@ describe('Choices between characters', () => {
     const mockClose = jest.fn();
     render((
       <div>
-        <CharactersContext.Provider value={['juan']}>
+        <CharactersContext.Provider value={[{ name: 'juan', guessed: false }]}>
           <Choices closeTarget={mockClose} location={{ x: 10, y: 20 }}/>
         </CharactersContext.Provider>
       </div>
@@ -36,7 +36,7 @@ describe('Choices between characters', () => {
     const mockClose = jest.fn();
     render((
       <div>
-        <CharactersContext.Provider value={['juan']}>
+        <CharactersContext.Provider value={[{ name: 'juan', guessed: false }]}>
           <Choices closeTarget={mockClose} location={{ x: 10, y: 20 }} />
         </CharactersContext.Provider>
       </div>

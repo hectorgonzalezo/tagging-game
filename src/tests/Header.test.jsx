@@ -19,12 +19,25 @@ describe('Header functionality', () => {
 
   test('Characters should be created and pictures added', () => {
     render(
-      <CharactersContext.Provider value={['Boo']}>
+      <CharactersContext.Provider value={[{ name:'Boo', guessed: false }]}>
         <Header />
       </CharactersContext.Provider>
     );
 
     const charactersDisplay = screen.queryAllByRole('listitem');
     expect(charactersDisplay[1].id).toBe('Boo-option');
+  });
+
+  test('Guessing correctly greys out a character', () => {
+    render(
+      <CharactersContext.Provider value={[{ name:'Boo', guessed: true }]}>
+        <Header />
+      </CharactersContext.Provider>
+    );
+
+    const charactersDisplay = screen.queryAllByRole('listitem');
+    expect(charactersDisplay[1].id).toBe('Boo-option');
+    // options should be greyed out
+    expect(charactersDisplay[1]).toHaveStyle('opacity: 0.3');
   });
 });

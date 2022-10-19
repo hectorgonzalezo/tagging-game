@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const CharactersContext = createContext(() => {});
+const TargetsContext = createContext(() => {});
 
-export default CharactersContext;
+export default TargetsContext;

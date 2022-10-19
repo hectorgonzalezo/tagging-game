@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import uniqid from 'uniqid';
+import { func } from 'prop-types';
 import comiconImg from '../assets/comicon.jpg';
 import Target from './Target';
 import CorrectGuess from './CorrectGuess';
 import TargetsContext from './TargetsContext';
 import '../styles/mainImageStyle.css';
 
-function MainImage() {
+function MainImage({ guessFunc }) {
   // Target currently selected by user
   const [target, setTarget] = useState({});
   // This will keep track of every correctGuess
@@ -18,7 +18,6 @@ function MainImage() {
 
   // This function allow the user to click on a location in image
   function clickLocation(e) {
-    console.log({e})
     const { pageX, pageY } = e;
     setTarget({ x: pageX, y: pageY });
     setBullseyeActive(false);
@@ -40,12 +39,16 @@ function MainImage() {
 
   function checkTarget(location, name) {
     setHits((prevHits) => [...prevHits, { location, name }]);
-    console.log('check')
   }
 
   // After a correct hit, remove previous target
   useEffect(() => {
     closeTarget();
+    // add guess:true to last hit in array
+    if (hits.length > 0) {
+      console.log('change')
+      guessFunc(hits[hits.length - 1].name);
+    }
   }, [hits]);
 
   return (
@@ -84,5 +87,9 @@ function MainImage() {
     </TargetsContext.Provider>
   );
 }
+
+MainImage.propTypes = {
+  guessFunc: func.isRequired,
+};
 
 export default MainImage;

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import uniqid from 'uniqid';
 import { func, objectOf, number } from 'prop-types';
 import CharactersContext from './CharactersContext';
 import CharacterOption from './CharacterOption';
@@ -15,9 +16,10 @@ function Choices({ closeTarget, location }) {
       {/* add a button for every character */}
       {characters.map((character) => (
         <CharacterOption
-          key={character}
-          name={character}
+          key={character.name}
+          name={character.name}
           location={location}
+          inactive={character.guessed}
         />
       ))}
     </div>
