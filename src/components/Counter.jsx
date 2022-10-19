@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { func } from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { bool, func } from 'prop-types';
 import styled from 'styled-components';
-import useTimer from '../hooks/useTimer';
 import formatTime from '../utils/formatTime';
 
 const Display = styled.h1`
@@ -12,40 +11,64 @@ const Display = styled.h1`
 `;
 
 function Counter({ getTime, stop }) {
-  const timer = useTimer();
+  // const timer = useTimer();
+  const [time, setTime] = useState(0);
+  const [loop, setLoop] = useState(undefined);
   // this is used to prevent the timer from starting twice
   let timerStarted = false;
 
+  function restartTimer() {
+    timerStarted = true;
+    setTime(0);
+    setLoop(
+      setInterval(() => {
+        if (!stop) {
+          setTime((prevTime) => prevTime + 1);
+        }
+      }, 1000)
+    );
+  }
+
+  function stopTimer() {
+    clearInterval(loop);
+    setLoop(undefined);
+  }
+
   useEffect(() => {
     if (!timerStarted) {
-      timer.start();
-      timerStarted = true;
+      restartTimer();
     }
   }, []);
 
   useEffect(() => {
-    getTime(timer.time);
+    if (!stop) {
+      getTime(time);
+    }
   });
 
   // Stop timer if sent true from .App
   useEffect(() => {
-    console.log(stop)
     if (stop) {
-      timer.stop();
+      stopTimer();
+      timerStarted = false;
+    } else if (!timerStarted) {
+      restartTimer();
     }
   }, [stop]);
 
   return (
-    <Display>{ formatTime(timer.time)}</Display>
+    <Display >{formatTime(time)}</Display>
   );
 }
 
 Counter.defaultProps = {
   getTime: () => {},
+  stop: false,
 };
 
 Counter.propTypes = {
   getTime: func,
+  stop: bool,
 };
 
 export default Counter;

@@ -10,7 +10,6 @@ describe('Modal after winning', () => {
     render(<WinModal time={60} restartFunc={mockFunc} />);
 
     const timeDisplay = screen.queryByRole('heading', { name: '0:01:00' });
-    screen.debug();
 
     expect(timeDisplay).toBeInTheDocument();
   });

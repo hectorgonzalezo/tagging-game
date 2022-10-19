@@ -25,8 +25,9 @@ function App() {
 
   // Characters to be found in image
   const [characters, setCharacters] = useState(charactersArray);
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   const [time, setTime] = useState(0);
+  const [restart, setRestart] = useState(false);
 
   function isEveryCharacterGuessed() {
     const result = characters.every((character) => character.guessed === true);
@@ -42,16 +43,21 @@ function App() {
       return character;
     });
     setCharacters(newCharacters);
-  };
+  }
 
   // Gets the time from Counter child element
   function getTime(currentTime) {
     setTime(currentTime);
   }
-  
-  // Restart game
-  function restartFunc(){
-    console.log('restart')
+
+  // Restart game, called by WinModal
+  function restartFunc() {
+    setModalVisible(false);
+    setCharacters(charactersArray);
+    setRestart(true);
+    setTimeout(() => {
+      setRestart(false)
+    }, 1000);
   }
 
   // every time a character is updated, check if they're all guessed correctly
@@ -65,9 +71,9 @@ function App() {
   return (
     <div className={`App ${modalVisible ? 'opaque' : ''}`}>
       <CharactersContext.Provider value={characters}>
-        <Header getTime={getTime} stop={modalVisible}/>
-        {modalVisible ? <WinModal time={time} /> : null}
-        <MainImage guessFunc={guessCorrectly} restartFunc={restartFunc} />
+        <Header getTime={getTime} stop={modalVisible} />
+        {modalVisible ? <WinModal time={time} restartFunc={restartFunc} /> : null}
+        <MainImage guessFunc={guessCorrectly} restart={restart} />
         <Footer projectName="wheres-waldo" />
       </CharactersContext.Provider>
     </div>

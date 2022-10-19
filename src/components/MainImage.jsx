@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { func } from 'prop-types';
+import { bool, func } from 'prop-types';
 import comiconImg from '../assets/comicon.jpg';
 import Target from './Target';
 import CorrectGuess from './CorrectGuess';
 import TargetsContext from './TargetsContext';
 import '../styles/mainImageStyle.css';
 
-function MainImage({ guessFunc }) {
+function MainImage({ guessFunc, restart}) {
   // Target currently selected by user
   const [target, setTarget] = useState({});
   // This will keep track of every correctGuess
@@ -50,6 +50,14 @@ function MainImage({ guessFunc }) {
     }
   }, [hits]);
 
+  // Restart is called by App
+  useEffect(() => {
+    if (restart) {
+      setTarget({});
+      setHits([]);
+    }
+  }, [restart]);
+
   return (
     <TargetsContext.Provider value={checkTarget}>
       <div id="img-container">
@@ -87,8 +95,13 @@ function MainImage({ guessFunc }) {
   );
 }
 
+MainImage.defaulProps = {
+  restart: false,
+}
+
 MainImage.propTypes = {
   guessFunc: func.isRequired,
+  restart: bool,
 };
 
 export default MainImage;
