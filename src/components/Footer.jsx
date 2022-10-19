@@ -5,28 +5,28 @@ import githubLogo from '../assets/github-logo.png';
 
 const StyledFooter = styled.footer`
   margin-top: auto;
-  display: flex;
-  align-items: center;
   height: 50px;
   width: 100%;
-  gap: 2vw;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.5rem;
   background-color: var(--prussian-blue);
-  position: relative;
 
   & > div{
     position: sticky;
-    left:50%;
-    transform: translate(-50%, 0);
-    display: flex;
-    gap: 25px;
+    left:0%;
+    display: grid;
+    grid-template-columns: 2.3fr 1fr 2fr 0.1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 100%;
   }
 
   & a{
     color: white;
+    justify-self: start;
   }
 
 `;
