@@ -12,6 +12,7 @@ describe('Main image for the game', () => {
 
     userEvent.click(image);
 
+    screen.debug()
     // After click there should be a target
     const target = screen.getByTestId('target');
 
