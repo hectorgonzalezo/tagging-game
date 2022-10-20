@@ -6,6 +6,8 @@ import {
   where,
   getDocs,
   addDoc,
+  orderBy,
+  limit,
 } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { getFirebaseConfig } from './firebase-config';
@@ -61,14 +63,30 @@ async function lookForResult(location, character) {
 // This function gets called by the modal displayed after the user wins
 async function submitUserScore(scoreData) {
   try {
-    console.log(scoreData)
     await addDoc(collection(db, 'Scores'), scoreData);
     return true;
   } catch (err) {
-    console.log(err)
+    console.log(err);
+    return false
   }
 }
 
-const database = { lookForResult, submitUserScore };
+// Gets top ten scores to de displayed by WinModal
+async function getTopScores() {
+  const result = [];
+
+  const scoresQuery = query(collection(db, 'Scores'), orderBy('score', 'desc'), limit(10));
+
+  const scores = await getDocs(scoresQuery);
+
+  scores.forEach((doc) => {
+    // Add character to reference array
+    result.push(doc.data());
+  });
+
+  return result;
+}
+
+const database = { lookForResult, submitUserScore, getTopScores };
 
 export default database;
