@@ -28,7 +28,7 @@
   grid-template-areas: "title1 title2"
                        "scores time"
                        "scores restart"
-                       "leader submit";
+                       "scores submit";
   animation: fadeIn 1s;
   z-index: 13;
 }
@@ -56,10 +56,6 @@
   grid-area: restart;
 }
 
-/* * {
-  outline:  2px dashed red;
-} */
-
 #win-modal-inner #button-leaderboard{
   grid-area: leader;
 }
@@ -72,6 +68,19 @@
   justify-items: center;
   gap: 10px;
   grid-template-columns: auto 1fr;
+}
+
+#win-modal-inner ul{
+  box-shadow: 3px 3px 8px black;
+  outline: 4px solid white;
+  border-radius: 0.2rem;
+}
+#win-modal-inner li{
+  display: grid;
+  background-color: var(--prussian-blue);
+  grid-template-columns: 1fr 3fr 2fr;
+  outline: 1px solid  white;
+  padding: 5px;
 }
 
 form label {

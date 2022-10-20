@@ -5,7 +5,6 @@ import { number, func } from 'prop-types';
 import formatTime from '../utils/formatTime';
 import SubmitScore from './SubmitScore';
 import database from '../firebase';
-import { uniqueId } from 'lodash';
 
 function WinModal({ time, restartFunc }) {
   const [topScores, setTopScore] = useState([]);
@@ -24,13 +23,15 @@ function WinModal({ time, restartFunc }) {
         <ul id="scores">
           {topScores.map((score, i) => (
             <li key={uniqid()}>
-              {`${i + 1}. ${score.name} ${score.score}`}
+              <p>{i+1}. </p>
+              <p>{score.name}</p>
+              <p>{score.score}</p>
             </li>
           ))}
         </ul>
-        <button type="button" id="button-leaderboard">
+        {/* <button type="button" id="button-leaderboard">
           View Leaderboard
-        </button>
+        </button> */}
         <h2>Time:</h2>
         <h3>{formatTime(time)}</h3>
         <button

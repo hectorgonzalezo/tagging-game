@@ -75,7 +75,7 @@ async function submitUserScore(scoreData) {
 async function getTopScores() {
   const result = [];
 
-  const scoresQuery = query(collection(db, 'Scores'), orderBy('score', 'desc'), limit(10));
+  const scoresQuery = query(collection(db, 'Scores'), orderBy('score', 'asc'), limit(10));
 
   const scores = await getDocs(scoresQuery);
 

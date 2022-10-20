@@ -8,6 +8,10 @@
   src: url('../assets/stintultraexpanded-regular-webfont.woff2') format('woff2');
 }
 
+/* * {
+  outline: 3px dashed red;
+} */
+
 :root {
   /* CSS HEX */
   --skobeloff: #006466ff;
