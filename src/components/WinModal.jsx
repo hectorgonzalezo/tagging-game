@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/winModalStyle.css';
 import { number, func } from 'prop-types';
 import formatTime from '../utils/formatTime';
+import SubmitScore from './SubmitScore';
 
 function WinModal({ time, restartFunc }) {
   return (
@@ -25,10 +26,7 @@ function WinModal({ time, restartFunc }) {
         <button type="button" className="button" id="button-restart" onClick={restartFunc}>
           Restart
         </button>
-        <form action="">
-          <input type="text" name="name" maxLength={20} placeholder="Name" />
-          <button type="button">Submit score</button>
-        </form>
+        <SubmitScore time={formatTime(time)} />
       </div>
     </div>
   );

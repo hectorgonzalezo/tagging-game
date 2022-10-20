@@ -87,6 +87,7 @@ form input{
   outline: 3px solid var(--charcoal);
 }
 
+
 input::placeholder{
   font-size: 1rem;
   text-align: center;

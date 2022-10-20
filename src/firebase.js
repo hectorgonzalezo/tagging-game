@@ -5,6 +5,7 @@ import {
   query,
   where,
   getDocs,
+  addDoc,
 } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { getFirebaseConfig } from './firebase-config';
@@ -57,6 +58,17 @@ async function lookForResult(location, character) {
   return false;
 }
 
-const database = { lookForResult };
+// This function gets called by the modal displayed after the user wins
+async function submitUserScore(scoreData) {
+  try {
+    console.log(scoreData)
+    await addDoc(collection(db, 'Scores'), scoreData);
+    return true;
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+const database = { lookForResult, submitUserScore };
 
 export default database;

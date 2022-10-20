@@ -26,7 +26,7 @@ function CharactersDisplay() {
   return (
     <ul name="Characters" id="char-dropdown">
       <li>
-        <h2>Characters</h2>
+        <h2>↓Characters</h2>
         <ul>
           {characters.map((character) => {
             const imgTitle = formatImgTitle(character.name);
