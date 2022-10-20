@@ -5,26 +5,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WinModal from './components/WinModal';
 import CharactersContext from './components/CharactersContext';
+import getRandomCharacters from './utils/getRandomCharacters';
 
 function App() {
-  let charactersArray = [
-    "Waldo",
-    "QWOP",
-    "Rocko",
-    "Jamie Hyneman",
-    "Boo",
-    "General Snoo",
-    "Dwight Schrute",
-    "Ghost Rider",
-  ];
-  // add false to guessed for every character
-  // This is used to grey out guessed characters from list
-  charactersArray = charactersArray.map((character) => {
-    return { name: character, guessed: false };
-  });
-
   // Characters to be found in image
-  const [characters, setCharacters] = useState(charactersArray);
+  const [characters, setCharacters] = useState(getRandomCharacters(4));
   const [modalVisible, setModalVisible] = useState(false);
   const [time, setTime] = useState(0);
   const [restart, setRestart] = useState(false);
@@ -53,7 +38,7 @@ function App() {
   // Restart game, called by WinModal
   function restartFunc() {
     setModalVisible(false);
-    setCharacters(charactersArray);
+    setCharacters(getRandomCharacters(4));
     setRestart(true);
     setTimeout(() => {
       setRestart(false)

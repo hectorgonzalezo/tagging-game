@@ -28,6 +28,7 @@ function Target({ location, closeTarget, className, onClick }) {
     left: `${location.x - 25}px`,
   };
 
+
   return (
     <Circle
       style={positionStyle}
