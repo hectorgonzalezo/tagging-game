@@ -6,7 +6,8 @@
   width: 100%;
   z-index: 13;
 }
-#win-modal-inner{
+#win-modal-inner, 
+#leaderboard{
   position: sticky;
   top: 50vh;
   left: 50vw;
@@ -23,24 +24,28 @@
   align-items: center;
   justify-items: center;
   column-gap: 40px;
-  row-gap: 10px;
-  grid-template-columns: fr 1fr;
+  row-gap: 20px;
+  animation: fadeIn 1s;
+}
+
+#win-modal-inner {
+  grid-template-columns: 1fr 1fr;
   grid-template-areas: "title1 title2"
                        "scores time"
+                       "scores submit"
                        "scores restart"
-                       "scores submit";
-  animation: fadeIn 1s;
+                       "leader restart";
   z-index: 13;
 }
 
-#win-modal-inner h1{
+#win-modal-outer h1{
   grid-area: title1;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 #win-modal-inner h2{
   grid-area: title2;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 #win-modal-inner ul{
@@ -53,7 +58,14 @@
 }
 
 #win-modal-inner #button-restart{
+  background-color: rgb(34, 94, 34);
   grid-area: restart;
+  font-size: 1.7rem;
+}
+
+#win-modal-inner #button-restart:hover{
+  background-color: rgb(93, 230, 93);
+  color: black;
 }
 
 #win-modal-inner #button-leaderboard{
@@ -70,15 +82,17 @@
   grid-template-columns: auto 1fr;
 }
 
-#win-modal-inner ul{
+#win-modal-outer ul{
   box-shadow: 3px 3px 8px black;
   outline: 4px solid white;
   border-radius: 0.2rem;
 }
-#win-modal-inner li{
+
+#win-modal-outer li{
   display: grid;
   background-color: var(--prussian-blue);
   grid-template-columns: 1fr 3fr 2fr;
+  column-gap: 8px;
   outline: 1px solid  white;
   padding: 5px;
 }
@@ -115,6 +129,38 @@ form input:hover{
 
 #win-modal-inner form > button{
   grid-column: 1 / -1;
+}
+
+#leaderboard {
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  max-height: 500px;
+  width: 400px;
+  overflow: scroll;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 30px 1fr;
+  grid-template-areas: "close title"
+                       "board board";
+}
+
+#leaderboard ul {
+  grid-area: board;
+}
+
+#leaderboard h1{
+  grid-area: title;
+  justify-self: start;
+}
+
+#leaderboard > button{
+  justify-self: start;
+  background-color: rgb(135, 26, 26);
+  grid-area: close;
+}
+
+#leaderboard > button:hover{
+  justify-self: start;
+  background-color: rgb(66, 12, 12);
 }
 
 @keyframes fadeIn {

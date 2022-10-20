@@ -10,7 +10,7 @@ import getRandomCharacters from './utils/getRandomCharacters';
 function App() {
   // Characters to be found in image
   const [characters, setCharacters] = useState(getRandomCharacters(4));
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   const [time, setTime] = useState(0);
   const [restart, setRestart] = useState(false);
 

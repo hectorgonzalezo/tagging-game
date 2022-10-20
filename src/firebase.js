@@ -72,10 +72,17 @@ async function submitUserScore(scoreData) {
 }
 
 // Gets top ten scores to de displayed by WinModal
-async function getTopScores() {
+async function getTopScores(all = false) {
   const result = [];
+  let scoresQuery;
 
-  const scoresQuery = query(collection(db, 'Scores'), orderBy('score', 'asc'), limit(10));
+  // get all queries for leadeboard
+  if (all) {
+    scoresQuery = query(collection(db, 'Scores'), orderBy('score', 'asc'));
+  } else {
+  // get only top ten for Win Modal
+    scoresQuery = query(collection(db, 'Scores'), orderBy('score', 'asc'), limit(10));
+  }
 
   const scores = await getDocs(scoresQuery);
 
