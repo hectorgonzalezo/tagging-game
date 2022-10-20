@@ -4,6 +4,7 @@ import { string } from 'prop-types';
 
 function SubmitScore({ time }) {
   const [name, setName] = useState('');
+  const [disabled, setDisabled] = useState(false);
   const inputRef = useRef(null);
   const formRef = useRef(null);
 
@@ -12,10 +13,13 @@ function SubmitScore({ time }) {
     e.target.setCustomValidity('');
   }
 
-  function submit(e) {
+  async function submit(e) {
     if (e.target.checkValidity()) {
       e.preventDefault();
-      database.submitUserScore({ name, time });
+      const submitted = await database.submitUserScore({ name, time });
+      // If submitted correctly, disable button
+      console.log(submitted)
+      setDisabled(submitted);
     }
   }
 
@@ -28,6 +32,7 @@ function SubmitScore({ time }) {
 
   return (
     <form action="" ref={formRef} onSubmit={submit}>
+    <span>{disabled ? 'Score submited!' : ''}</span>
       <input
         type="text"
         name="name"
@@ -39,7 +44,7 @@ function SubmitScore({ time }) {
         ref={inputRef}
         required
       />
-      <button type="submit" onClick={addCustomValidity}>
+      <button type="submit" onClick={addCustomValidity} disabled={disabled}>
         Submit score
       </button>
     </form>
