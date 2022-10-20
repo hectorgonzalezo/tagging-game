@@ -4,6 +4,7 @@ import MainImage from './components/MainImage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WinModal from './components/WinModal';
+import Instructions from './components/Instructions';
 import CharactersContext from './components/CharactersContext';
 import getRandomCharacters from './utils/getRandomCharacters';
 
@@ -58,6 +59,7 @@ function App() {
       <CharactersContext.Provider value={characters}>
         <Header getTime={getTime} stop={modalVisible} />
         {modalVisible ? <WinModal time={time} restartFunc={restartFunc} /> : null}
+        <Instructions />
         <MainImage guessFunc={guessCorrectly} restart={restart} />
         <Footer projectName="wheres-waldo" />
       </CharactersContext.Provider>
