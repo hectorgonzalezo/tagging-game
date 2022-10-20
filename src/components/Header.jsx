@@ -8,7 +8,7 @@ function Header({ getTime, stop }) {
   return (
     <header>
       <div>
-        <h1 id="title">Hidden picture game</h1>
+        <h1 id="title">Find me!</h1>
         <Counter getTime={getTime} stop={stop} />
         <CharactersDisplay />
       </div>
