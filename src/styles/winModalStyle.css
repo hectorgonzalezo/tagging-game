@@ -1,4 +1,5 @@
-#win-modal-outer{
+#win-modal-outer,
+#scroll-modal-outer{
   position: absolute;
   top: 100px;
   left: 0;
@@ -7,8 +8,12 @@
   z-index: 13;
 }
 
+#scroll-modal-inner{
+}
+
 #win-modal-inner, 
-#leaderboard{
+#leaderboard,
+#scroll-modal-inner{
   position: sticky;
   top: 50vh;
   left: 50vw;

@@ -4,6 +4,7 @@ import MainImage from './components/MainImage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WinModal from './components/WinModal';
+import ScrollModal from './components/ScrollModal';
 import Instructions from './components/Instructions';
 import CharactersContext from './components/CharactersContext';
 import getRandomCharacters from './utils/getRandomCharacters';
@@ -11,6 +12,7 @@ import getRandomCharacters from './utils/getRandomCharacters';
 function App() {
   // Characters to be found in image
   const [characters, setCharacters] = useState(getRandomCharacters(4));
+  const [scrollModalVisible, setScrollModalVisible] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
   const [time, setTime] = useState(0);
   const [restart, setRestart] = useState(false);
@@ -54,10 +56,19 @@ function App() {
     }
   }, [characters]);
 
+
+  // Close modal with instruction to scroll
+  useEffect(() => {
+    setTimeout(() => {
+      setScrollModalVisible(false);
+    }, 4000);
+  }, []);
+
   return (
     <div className={`App ${modalVisible ? 'opaque' : ''}`}>
       <CharactersContext.Provider value={characters}>
         <Header getTime={getTime} stop={modalVisible} />
+        {scrollModalVisible ? <ScrollModal /> : null }
         {modalVisible ? <WinModal time={time} restartFunc={restartFunc} /> : null}
         <Instructions />
         <MainImage guessFunc={guessCorrectly} restart={restart} />

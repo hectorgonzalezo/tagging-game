@@ -20,13 +20,16 @@ function Counter({ getTime, stop }) {
   function restartTimer() {
     timerStarted = true;
     setTime(0);
-    setLoop(
-      setInterval(() => {
-        if (!stop) {
-          setTime((prevTime) => prevTime + 1);
-        }
-      }, 1000)
-    );
+    // leave space for scroll instructions
+    setTimeout(() => {
+      setLoop(
+        setInterval(() => {
+          if (!stop) {
+            setTime((prevTime) => prevTime + 1);
+          }
+        }, 1000)
+      );
+    }, 4000);
   }
 
   function stopTimer() {
