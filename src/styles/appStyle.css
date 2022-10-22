@@ -41,9 +41,11 @@
   font-family: 'Stint Ultra Expanded', cursive;
 }
 
+
 .App {
   background-color: var(--skobeloff);
   min-height: 100vh;
+  height: 100vh;
   width: calc(var(--img-width) + calc(var(--img-padding) * 2));
   display: grid;
   grid-template-rows: 70px 1fr 50px;

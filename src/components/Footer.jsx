@@ -30,6 +30,10 @@ const StyledFooter = styled.footer`
     justify-self: start;
   }
 
+  & h2{
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+
 `;
 
 const GitHubLogo = styled.img`
