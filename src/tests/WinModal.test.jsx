@@ -18,7 +18,7 @@ describe('Modal after winning', () => {
     const mockFunc = jest.fn();
     render(<WinModal time={0} restartFunc={mockFunc} />);
 
-    const restartButton = screen.getByRole('button', { name: 'Restart' });
+    const restartButton = screen.getByRole('button', { name: 'Restart game' });
 
     userEvent.click(restartButton);
 
