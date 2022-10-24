@@ -40,7 +40,7 @@ function App() {
   // Restart game, called by WinModal
   function restartFunc() {
     setModalVisible(false);
-    setCharacters(getRandomCharacters(4));
+    setCharacters(getRandomCharacters(2));
     setRestart(true);
     setTimeout(() => {
       setRestart(false)
