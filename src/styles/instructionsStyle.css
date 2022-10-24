@@ -17,7 +17,6 @@
   width: auto;
   color: white;
   box-shadow: 5px 5px 10px black;
-  animation: shrink 1s;
 
   transition: all 1s ease-out;
 }
@@ -70,19 +69,6 @@
   transition: all 1s ease-out;
 }
 
-@keyframes shrink {
-  0% {
-    transform: scale(3.0);
-  }
-
-  50% {
-    transform: scale(3.0);
-  }
-
-  100% {
-    transform: scale(1.0);
-  }
-}
 
 @keyframes position {
   0% {

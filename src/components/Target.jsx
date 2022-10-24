@@ -24,7 +24,7 @@ const Circle = styled.div`
 function Target({ location, closeTarget, className, onClick }) {
   // turn location into a position to be sent to style
   const positionStyle = {
-    top: `${location.y - 25}px`,
+    top: `${location.y - 100}px`,
     left: `${location.x - 25}px`,
   };
 
