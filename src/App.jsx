@@ -5,13 +5,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WinModal from './components/WinModal';
 import ScrollModal from './components/ScrollModal';
-import Instructions from './components/Instructions';
 import CharactersContext from './components/CharactersContext';
 import getRandomCharacters from './utils/getRandomCharacters';
 
 function App() {
   // Characters to be found in image
-  const [characters, setCharacters] = useState(getRandomCharacters(4));
+  const [characters, setCharacters] = useState(getRandomCharacters(2));
   const [scrollModalVisible, setScrollModalVisible] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
   const [time, setTime] = useState(0);
@@ -70,7 +69,6 @@ function App() {
         <Header getTime={getTime} stop={modalVisible} />
         {scrollModalVisible ? <ScrollModal /> : null }
         {modalVisible ? <WinModal time={time} restartFunc={restartFunc} /> : null}
-        <Instructions />
         <MainImage guessFunc={guessCorrectly} restart={restart} />
         <Footer projectName="wheres-waldo" />
       </CharactersContext.Provider>

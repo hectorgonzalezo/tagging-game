@@ -1,13 +1,14 @@
-#image-container{
+#img-container{
   width: var(--img-width);
   position: relative;
   width: auto;
+  background-color: var(--skobeloff);
 }
 
 #main-image{
   width: var(--img-width);
   border: var(--img-padding) solid var(--skobeloff);
-  border-radius: 2%;
+  border-radius: 4%;
 }
 
 .bullseye {

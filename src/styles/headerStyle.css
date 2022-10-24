@@ -16,8 +16,8 @@ header > div{
   left: 0%;
   padding: 0px 5px 0px 5px;
   display: grid;
-  grid-template-columns: 2.3fr 1fr 1fr 0.1fr;
-  align-items: center;
+  grid-template-columns: 2.3fr 1fr 1fr 0.5fr 0.1fr;
+  /* align-items: center; */
   justify-items: center;
   width: 100vw;
 } 

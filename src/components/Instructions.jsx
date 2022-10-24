@@ -3,7 +3,6 @@ import '../styles/instructionsStyle.css';
 
 function Instructions() {
   return (
-    <div id="instructions-outer">
       <div id="instructions-inner">
         <ul name="instructions" id="instructions-dropdown">
           <li>
@@ -22,7 +21,6 @@ function Instructions() {
           </li>
         </ul>
       </div>
-    </div>
   );
  
 }

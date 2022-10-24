@@ -37,15 +37,14 @@
   --gradient-radial: radial-gradient(#006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
 
   --img-width: 2000px;
-  --img-padding: 10px;
+  --img-padding: 20px;
   font-family: 'Stint Ultra Expanded', cursive;
 }
 
 
 .App {
-  background-color: var(--skobeloff);
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   width: calc(var(--img-width) + calc(var(--img-padding) * 2));
   display: grid;
   grid-template-rows: 70px 1fr 50px;
