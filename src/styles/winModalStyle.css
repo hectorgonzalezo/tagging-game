@@ -8,18 +8,14 @@
   z-index: 13;
 }
 
-#scroll-modal-inner{
-}
-
-#win-modal-inner, 
 #leaderboard,
 #scroll-modal-inner{
   position: sticky;
   top: 50vh;
   left: 50vw;
   height: auto;
-  width: clamp(400px, 50vw, 900px);
-  transform: translate(-50%, -50%);
+  width: clamp(200px, 50vw, 900px);
+  transform: translate(-25%, -50%);
   background-color: var(--skobeloff);
   padding: 20px;
   color: white;

@@ -17,7 +17,6 @@
   width: auto;
   color: white;
   box-shadow: 5px 5px 10px black;
-
   transition: all 1s ease-out;
 }
 
@@ -48,7 +47,7 @@
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  bottom: -560%;
+  top: 120%;
   right: 0;
   display: none;
   background-color: var(--prussian-blue);

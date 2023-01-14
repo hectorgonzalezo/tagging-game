@@ -3,6 +3,7 @@
   position: relative;
   width: auto;
   background-color: var(--skobeloff);
+  overflow-y: hidden;
 }
 
 #main-image{

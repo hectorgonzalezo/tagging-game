@@ -41,11 +41,10 @@
   font-family: 'Stint Ultra Expanded', cursive;
 }
 
-
 .App {
   min-height: 100vh;
   height: auto;
-  width: calc(var(--img-width) + calc(var(--img-padding) * 2));
+  width: auto;
   display: grid;
   grid-template-rows: 70px 1fr 50px;
   gap: 0px;
@@ -113,20 +112,20 @@ button:disabled{
   }
 }
 
-  @keyframes shakeUp {
-    10%, 90% {
-      transform: translate3d(0, -1px, 0);
-    }
-
-    20%, 80% {
-      transform: translate3d(0, 2px, 0);
-    }
-
-    30%, 50%, 70% {
-      transform: translate3d(0, -4px, 0);
-    }
-
-    40%, 60% {
-      transform: translate3d(0, 4px, 0);
-    }
+@keyframes shakeUp {
+  10%, 90% {
+    transform: translate3d(0, -1px, 0);
   }
+
+  20%, 80% {
+    transform: translate3d(0, 2px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(0, -4px, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(0, 4px, 0);
+  }
+}

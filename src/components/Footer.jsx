@@ -18,7 +18,7 @@ const StyledFooter = styled.footer`
     position: sticky;
     left:0%;
     display: grid;
-    grid-template-columns: 2.3fr 1fr 2fr 0.1fr;
+    grid-template-columns: 2.7fr 1fr 2fr 0.1fr;
     align-items: center;
     justify-items: center;
     width: 100vw;
@@ -32,6 +32,12 @@ const StyledFooter = styled.footer`
 
   & h2{
     font-size: clamp(1rem, 3vw, 2rem);
+  }
+
+  @media (max-width: 700px) {
+    h2 {
+      font-size: 0.8rem;
+    }
   }
 
 `;

@@ -16,8 +16,7 @@ header > div{
   left: 0%;
   padding: 0px 5px 0px 5px;
   display: grid;
-  grid-template-columns: 2.3fr 1fr 1fr 0.5fr 0.1fr;
-  /* align-items: center; */
+  grid-template-columns: 2fr 1fr 1fr 0.5fr 0.1fr;
   justify-items: center;
   width: 100vw;
 } 
@@ -80,4 +79,23 @@ header > div{
   gap: 10px;
   height: auto;
  transition: all 1s ease-out;
+}
+
+@media (max-width: 700px) {
+  #title{
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: center;
+  }
+
+  header > div{
+    position: sticky;
+    left: 0%;
+    padding: 0px 5px 0px 5px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 2fr 1fr 1fr 0.5fr 0.2fr;
+    justify-items: center;
+    width: 100vw;
+  } 
 }
