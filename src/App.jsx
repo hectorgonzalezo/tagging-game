@@ -63,12 +63,8 @@ function App() {
     }, 4000);
   }, []);
 
-  function clickLocation(e) {
-    console.log({e})
-  }
-
   return (
-    <div className={`App ${modalVisible ? 'opaque' : ''}`} onClick={clickLocation}>
+    <div className={`App ${modalVisible ? 'opaque' : ''}`}>
       <CharactersContext.Provider value={characters}>
         <Header getTime={getTime} stop={modalVisible} />
         {scrollModalVisible ? <ScrollModal /> : null }

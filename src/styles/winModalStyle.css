@@ -19,7 +19,7 @@
   background-color: var(--skobeloff);
   padding: 20px;
   color: white;
-  outline: 5px solid white;
+  border: 5px solid white;
   border-radius: 1rem;
   box-shadow: 5px 5px 10px black;
   display: grid;
@@ -86,7 +86,7 @@
 
 #win-modal-outer ul{
   box-shadow: 3px 3px 8px black;
-  outline: 4px solid white;
+  border: 4px solid white;
   border-radius: 0.2rem;
 }
 
@@ -95,7 +95,7 @@
   background-color: var(--prussian-blue);
   grid-template-columns: 1fr 3fr 2fr;
   column-gap: 8px;
-  outline: 1px solid  white;
+  border: 1px solid  white;
   padding: 5px;
 }
 
@@ -109,7 +109,7 @@ form input{
   width: 150px;
   padding: 3px 6px 3px 6px;
   border-radius: 1rem;
-  outline: 3px solid var(--charcoal);
+  border: 3px solid var(--charcoal);
 }
 
 form span{
@@ -126,7 +126,7 @@ input::placeholder{
 }
 
 form input:hover{
-  outline: 3px solid var(--palatinate-purple)
+  border: 3px solid var(--palatinate-purple)
 }
 
 #win-modal-inner form > button{

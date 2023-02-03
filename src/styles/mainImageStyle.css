@@ -10,6 +10,7 @@
   width: var(--img-width);
   border: var(--img-padding) solid var(--skobeloff);
   border-radius: 4%;
+  cursor: none;
 }
 
 .bullseye {

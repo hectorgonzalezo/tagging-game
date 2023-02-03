@@ -12,7 +12,7 @@
 #instructions-dropdown {
   display: block;
   position: relative;
-  outline: 3px solid white;
+  border: 3px solid white;
   border-radius: 1rem;
   width: auto;
   color: white;
@@ -26,7 +26,7 @@
   background-color: var(--palatinate-purple);
   padding: 10px;
   font-size: clamp(1rem, 3vw, 1.8rem);
-  outline: 3px solid white;
+  border: 3px solid white;
   border-radius: 1rem;
   transition: all 1s ease-out;
 }

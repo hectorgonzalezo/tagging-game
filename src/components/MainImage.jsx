@@ -18,16 +18,16 @@ function MainImage({ guessFunc, restart}) {
 
   // This function allow the user to click on a location in image
   function clickLocation(e) {
-    const x = e.nativeEvent.offsetX + 20;
-    const y = e.nativeEvent.offsetY + 95;
+    const x = e.nativeEvent.offsetX + 18;
+    const y = e.nativeEvent.offsetY + 90;
     setTarget({ x, y });
     setBullseyeActive(false);
     setBullseyeVisible(false);
   }
 
   function locateBullseye(e) {
-    const x = e.nativeEvent.offsetX + 20;
-    const y = e.nativeEvent.offsetY + 95;
+    const x = e.nativeEvent.offsetX + 18;
+    const y = e.nativeEvent.offsetY + 90;
     if (bullseyeActive) {
       setBullseye({ x, y });
     }

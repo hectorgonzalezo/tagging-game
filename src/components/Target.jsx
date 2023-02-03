@@ -8,11 +8,11 @@ const Circle = styled.div`
   border-radius: 100%;
   width: 50px;
   height: 50px;
-  outline: 3px dashed white;
+  border: 3px dashed white;
   background-color:  rgba(171, 169, 169, 0.5);
 
   &.correct{
-    outline: 3px dashed white; 
+    border: 3px dashed white; 
     background-color: rgba(15, 15, 255,  0.5); 
   }
 
@@ -31,7 +31,7 @@ function Target({ location, closeTarget, className, onClick }) {
   return (
     <Circle
       style={positionStyle}
-      className={className}
+      className={className + ' target'}
       onClick={onClick}
       data-testid={className === 'target' ? 'target' : 'bullseye'}
     >

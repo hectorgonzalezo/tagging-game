@@ -10,7 +10,7 @@ const CharImage = styled.img`
 
 const CharItem = styled.li`
   background-color: var(--palatinate-purple);
-  outline: 1px solid white;
+  border: 1px solid white;
   font-size: clamp(0.8rem, 3vw, 1.5rem);
   display: flex;
   gap: 5px;
