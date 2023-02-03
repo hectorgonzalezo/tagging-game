@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.11c2a21d.css",
+    "main.js": "/static/js/main.6a12bb65.js",
+    "static/media/comicon.jpg": "/static/media/comicon.8b9b82229bdb6d8434e2.jpg",
+    "static/media/boo.png": "/static/media/boo.0f6e7ceb6153d9bec84e.png",
+    "static/media/ghostrider.png": "/static/media/ghostrider.cba3b4ee84e704f7ae25.png",
+    "static/media/rickgrimes.png": "/static/media/rickgrimes.06444778ff9a3fbb9e6e.png",
+    "static/media/jamiehyneman.jpeg": "/static/media/jamiehyneman.6dd8d177cce99667d37a.jpeg",
+    "static/media/captainamerica.png": "/static/media/captainamerica.1c0d618936c4b0631eb9.png",
+    "static/media/rocko.png": "/static/media/rocko.0b48ab99fa9393a19a5d.png",
+    "static/media/nursejoker.jpeg": "/static/media/nursejoker.ce594a1297f8a9efbf6f.jpeg",
+    "static/media/loading.gif": "/static/media/loading.d9deddb71b01321b6d3a.gif",
+    "static/media/ariel.png": "/static/media/ariel.a275e508b38d595b2f33.png",
+    "static/media/waldo.png": "/static/media/waldo.3cffbc03c272eee8f467.png",
+    "static/media/stintultraexpanded-regular-webfont.woff": "/static/media/stintultraexpanded-regular-webfont.8e8cbd5add3e4c838b3c.woff",
+    "static/media/noface.png": "/static/media/noface.0ead4e16ba3a746616e1.png",
+    "static/media/generalsnoo.png": "/static/media/generalsnoo.f4261c3cd4d90c0511a5.png",
+    "static/media/stintultraexpanded-regular-webfont.woff2": "/static/media/stintultraexpanded-regular-webfont.69236f028dbf97b6d2d0.woff2",
+    "static/media/dwightschrute.jpeg": "/static/media/dwightschrute.befafd4b40eddff37907.jpeg",
+    "index.html": "/index.html",
+    "static/media/moveIcon.svg": "/static/media/moveIcon.349ea84dc998533f7fbe2bb19cb75d89.svg",
+    "main.11c2a21d.css.map": "/static/css/main.11c2a21d.css.map",
+    "main.6a12bb65.js.map": "/static/js/main.6a12bb65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11c2a21d.css",
+    "static/js/main.6a12bb65.js"
+  ]
+}
