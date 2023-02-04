@@ -55,7 +55,6 @@ function App() {
     }
   }, [characters]);
 
-
   // Close modal with instruction to scroll
   useEffect(() => {
     setTimeout(() => {

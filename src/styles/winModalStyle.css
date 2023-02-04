@@ -3,12 +3,17 @@
   position: absolute;
   top: 100px;
   left: 0;
-  height: 90%;
+  height: 170%;
   width: 100%;
   z-index: 13;
 }
 
+#scroll-modal-outer{
+  height: 100%;
+}
+
 #leaderboard,
+#win-modal-inner,
 #scroll-modal-inner{
   position: sticky;
   top: 50vh;
@@ -83,6 +88,11 @@
   gap: 10px;
   grid-template-columns: auto 1fr;
 }
+#win-modal-inner h1,
+#win-modal-inner h2{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 #win-modal-outer ul{
   box-shadow: 3px 3px 8px black;
@@ -135,9 +145,9 @@ form input:hover{
 
 #leaderboard {
   z-index: 20;
-  transform: translate(-50%, -50%);
+  transform: translate(-25%, -50%);
   max-height: 500px;
-  width: 400px;
+  max-width: 400px;
   overflow: scroll;
   grid-template-rows: 50px 1fr;
   grid-template-columns: 30px 1fr;
@@ -163,6 +173,36 @@ form input:hover{
 #leaderboard > button:hover{
   justify-self: start;
   background-color: rgb(66, 12, 12);
+}
+
+@media (max-width: 900px){
+  #win-modal-outer,
+  #scroll-modal-outer{
+    height: 220%;
+  }
+  #win-modal-inner{
+    font-size: 13px;
+  }
+  #win-modal-inner h1,
+#win-modal-inner h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+#win-modal-inner h3{
+  font-size: 1.2rem;
+}
+  #win-modal-inner {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    grid-template-areas: "title2"
+                         " time"
+                         "submit"
+                         "title1"
+                         "scores"
+                         "leader"
+                         "restart";
+    z-index: 13;
+  }
 }
 
 @keyframes fadeIn {

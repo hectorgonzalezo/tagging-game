@@ -11,7 +11,7 @@ By [Héctor González Orozco](https://github.com/hectorgonzalezo)
 ## :computer: Built With
 
 * [ReactJS](https://reactjs.org/)
-* [Firebase](https://firebase.google.com/);
+* [Firebase](https://firebase.google.com/)
 
 ## :ferris_wheel: Live Preview
 
