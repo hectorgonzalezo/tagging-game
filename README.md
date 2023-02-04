@@ -15,7 +15,7 @@ By [Héctor González Orozco](https://github.com/hectorgonzalezo)
 
 ## :ferris_wheel: Live Preview
 
-[https://wheres-waldo-6619d.web.app/](https://wheres-waldo-6619d.web.app/)
+[https://tagging-game.netlify.app/](https://tagging-game.netlify.app/)
 
 ## :rocket: Features
 
