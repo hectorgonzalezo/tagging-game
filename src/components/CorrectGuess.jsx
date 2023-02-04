@@ -14,12 +14,12 @@ width: 180px;
 font-size: 1.3rem;
 animation: shakeUp 1s;
 top: ${(props) => {
-  if(props.location.y > 1200){
-  return`${props.location.y - 220}px` 
-  } else {
-  return `${props.location.y - 35}px`
+    if (props.location.y > 1200) {
+      return `${props.location.y - 220}px`;
+    }
+    return `${props.location.y - 35}px`;
   }
-}};
+};
 left: ${(props) => `${props.location.x - 90}px`};
 & > em{
   text-decoration: underline;

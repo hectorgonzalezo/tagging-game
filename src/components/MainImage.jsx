@@ -99,7 +99,7 @@ function MainImage({ guessFunc, restart}) {
 
 MainImage.defaulProps = {
   restart: false,
-}
+};
 
 MainImage.propTypes = {
   guessFunc: func.isRequired,

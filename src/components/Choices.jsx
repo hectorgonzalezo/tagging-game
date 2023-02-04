@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import uniqid from 'uniqid';
 import { func, objectOf, number } from 'prop-types';
 import CharactersContext from './CharactersContext';
 import CharacterOption from './CharacterOption';

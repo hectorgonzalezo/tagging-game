@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext } from 'react';
 import { string, number, objectOf, func, bool } from 'prop-types';
 import styled from 'styled-components';
+import loadingGif from '../assets/loading.gif';
 import useCharacterChoice from '../hooks/useCharacterChoice';
 import TargetsContext from './TargetsContext';
 
@@ -25,6 +26,7 @@ const Option = styled.button`
 
 function CharacterOption({ name, location, closeTarget, inactive }) {
   const { hit, checkChoice } = useCharacterChoice();
+  const [searchingHit, setSearchingHit] = useState(false);
   // This will help with the styling when the guess is wrong
   const [clicked, setClicked] = useState(false);
   const [wrong, setWrong] = useState(false);
@@ -36,7 +38,7 @@ function CharacterOption({ name, location, closeTarget, inactive }) {
     // on correct guess
     if (hit) {
       updateMainImage(location, name);
-    } else if(clicked) {
+    } else if (clicked) {
       setWrong(true);
     }
   }, [hit]);
@@ -46,16 +48,18 @@ function CharacterOption({ name, location, closeTarget, inactive }) {
     <Option
       onClick={
         // if its not the close button
-        name !== 'x'
-          ? () => {
-            setClicked(true);
-            return checkChoice(location, name);
-          }
+        name !== "x"
+          ? async () => {
+              setClicked(true);
+              setSearchingHit(true);
+              await checkChoice(location, name);
+              setSearchingHit(false);
+            }
           : closeTarget
       }
-      className={`${inactive ? 'inactive' : ''} ${wrong ? 'wrong' : ''}`}
+      className={`${inactive ? "inactive" : ""} ${wrong ? "wrong" : ""}`}
     >
-      {name}
+      {searchingHit ? <img src={loadingGif} className="loading-hit" alt="loading" /> : name }
     </Option>
   );
 }
