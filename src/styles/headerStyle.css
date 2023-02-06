@@ -7,6 +7,7 @@ header{
   top: 0px;
   background-color: var(--prussian-blue);
   height: 70px;
+  max-width: 100vw;
   gap: 10px;
   z-index: 11;
 }
@@ -16,9 +17,9 @@ header > div{
   left: 0%;
   padding: 0px 5px 0px 5px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 0.5fr 0.1fr;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
   justify-items: center;
-  width: 100vw;
+  max-width: 100vw;
 } 
 
 
@@ -82,6 +83,9 @@ header > div{
 }
 
 @media (max-width: 700px) {
+  header {
+    gap: 10px;
+  }
   #title{
     font-size: 1rem;
     font-weight: bold;
@@ -91,11 +95,11 @@ header > div{
   header > div{
     position: sticky;
     left: 0%;
-    padding: 0px 5px 0px 5px;
+    padding: 5px 5px 0px 5px;
     display: grid;
-    gap: 8px;
+    gap: 3px;
     grid-template-columns: 2fr 1fr 1fr 0.5fr 0.2fr;
     justify-items: center;
-    width: 100vw;
+    max-width: 100vw;
   } 
 }
