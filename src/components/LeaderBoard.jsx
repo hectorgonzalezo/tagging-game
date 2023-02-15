@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
 import { func } from 'prop-types';
-import database from '../firebase';
+import { getScores } from '../API/scores';
 import loading from '../assets/loading.gif';
 
 function LeaderBoard({ close }) {
   const [topScores, setTopScore] = useState([]);
 
-  function updateTopScores(){
-    database.getTopScores(true).then(scores => setTopScore(scores))
+  function updateTopScores() {
+    getScores().then(scores => setTopScore(scores));
   }
   // On render or when submitting score, load top scores
   useEffect(() => {

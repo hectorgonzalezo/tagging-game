@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import database from '../firebase';
+import { submitUserScore } from '../API/scores';
 import { string, func } from 'prop-types';
 
 function SubmitScore({ time, updateScores }) {
@@ -16,7 +16,7 @@ function SubmitScore({ time, updateScores }) {
   async function submit(e) {
     if (e.target.checkValidity()) {
       e.preventDefault();
-      const submitted = await database.submitUserScore({ name, score: time });
+      const submitted = await submitUserScore(name, time);
       // If submitted correctly, disable button
       setDisabled(submitted);
       updateScores();

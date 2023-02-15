@@ -5,23 +5,26 @@ import { number, func } from 'prop-types';
 import formatTime from '../utils/formatTime';
 import SubmitScore from './SubmitScore';
 import LeaderBoard from './LeaderBoard';
-import database from '../firebase';
+import { getScores } from '../API/scores';
 
 function WinModal({ time, restartFunc }) {
   const [topScores, setTopScore] = useState([]);
   const [leaderboardVisible, setLeaderboardVisible] = useState(false);
 
-  function updateTopScores(){
-    database.getTopScores(true).then(scores => setTopScore(scores)) 
+  function updateTopScores() {
+    getScores().then(scores => {
+      // limit to 10 scores
+      setTopScore(scores.splice(0, 10));
+    });
   }
 
-  function toggleLeaderboard(){
+  function toggleLeaderboard() {
     setLeaderboardVisible(prevVisibility => !prevVisibility);
   }
   // On render or when submitting score, load top scores
   useEffect(() => {
     updateTopScores();
-  }, [])
+  }, []);
 
   if (!leaderboardVisible) {
     return (

@@ -12,7 +12,7 @@ function App() {
   // Characters to be found in image
   const [characters, setCharacters] = useState(getRandomCharacters(2));
   const [scrollModalVisible, setScrollModalVisible] = useState(true);
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(true);
   const [time, setTime] = useState(0);
   const [restart, setRestart] = useState(false);
 
