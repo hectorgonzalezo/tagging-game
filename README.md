@@ -1,6 +1,8 @@
 # Find Me!
 
-Photo tagging game based on the popular children's puzzle books created by Martin Handford.
+Front end of Photo tagging game based on the popular children's puzzle books created by Martin Handford.
+
+Code for the Back end can be found [here](https://github.com/hectorgonzalezo/tagging-game-server).
 
 The goal is to find and click on the required characters, shown in the drop-down menu located in the header. After finding them, you can submit your time score to the database.
 
@@ -11,7 +13,8 @@ By [Héctor González Orozco](https://github.com/hectorgonzalezo)
 ## :computer: Built With
 
 * [ReactJS](https://reactjs.org/)
-* [Firebase](https://firebase.google.com/)
+
+
 
 ## :ferris_wheel: Live Preview
 
