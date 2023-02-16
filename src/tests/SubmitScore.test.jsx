@@ -4,8 +4,8 @@ import { render, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import SubmitScore from '../components/SubmitScore';
-import database from '../firebase';
-jest.mock('../firebase');
+import { submitUserScore } from '../API/scores';
+jest.mock('../API/scores');
 
 describe('Sumbit form', () => {
   test('Pressing the Submit score button calls function', async () => {
@@ -16,7 +16,7 @@ describe('Sumbit form', () => {
     userEvent.type(input, 'Juan');
     await act(async () => userEvent.click(button));
 
-    expect(database.submitUserScore).toBeCalled();
+    expect(submitUserScore).toBeCalled();
   });
 
   test('Pressing the Submit score sends correct user data', async () => {
@@ -29,6 +29,6 @@ describe('Sumbit form', () => {
 
     // Correctly updates input value
     expect(input.value).toBe('Juan');
-    expect(database.submitUserScore).toBeCalledWith({ name: 'Juan', score: '' });
+    expect(submitUserScore).toBeCalledWith("Juan", "");
   });
 });

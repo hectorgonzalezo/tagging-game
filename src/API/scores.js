@@ -10,7 +10,6 @@ export async function getScores() {
 }
 
 export async function submitUserScore(name, score) {
-  console.log({name, score})
   const response = await fetch(`${BASEURL}/scores`, {
     method: "POST",
     mode: 'cors',
